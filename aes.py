@@ -115,7 +115,7 @@ class AES:
 				self.subword(temp)
 				temp[0] ^= rcon
 				rcon = (rcon << 1) ^ (0x11B & -(rcon >> 7))
-			elif self.Nk > 6 and i % Nk == 4:
+			elif self.Nk > 6 and i % self.Nk == 4:
 				self.subword(temp)
 			self.words.append(self.xorword(self.words[i - self.Nk], temp))
 
